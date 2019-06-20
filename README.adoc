@@ -1,0 +1,25 @@
+# Simple Dockerfile for Asciidoctor-pdf
+
+1. Build dockerfile using this command:
+
+```
+docker build -t asciidoctor-pdf .
+```
+2. Start the container
+
+```
+docker run --name asciidoctor-pdf -h asciidoctor -it -v /your/host/folder:/documents/ asciidoctor-pdf /bin/bash
+```
+
+3. Enter to container
+
+```
+docker exec -it asciidoctor-pdf /bin/bash
+```
+
+4. Convert your asciidoctor file using asciidoctor-pdf
+
+```
+asciidoctor-pdf yourfile.adoc -o /output/folder/file.pdf
+```
+
